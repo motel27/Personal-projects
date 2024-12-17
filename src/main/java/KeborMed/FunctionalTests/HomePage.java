@@ -1,4 +1,4 @@
-package KeborMed.PositiveTests;
+package KeborMed.FunctionalTests;
 
 
 

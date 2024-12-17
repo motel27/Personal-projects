@@ -1,4 +1,4 @@
-package KeborMed.PositiveTests;
+package KeborMed.FunctionalTests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
