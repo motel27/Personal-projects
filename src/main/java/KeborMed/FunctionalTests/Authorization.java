@@ -1,4 +1,4 @@
-package KeborMed.PositiveTests;
+package KeborMed.FunctionalTests;
 import java.util.Set;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -6,7 +6,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
-public class LoginForm extends Base {
+public class Authorization extends Base {
 
     private Actions scrollUtils;
 
@@ -22,6 +22,7 @@ public class LoginForm extends Base {
 
         // Get all window handles (tabs)
         Set<String> windowHandles = driver.getWindowHandles();
+
         // Switch to the second tab (if it exists)
         for (String handle : windowHandles) {
             driver.switchTo().window(handle);

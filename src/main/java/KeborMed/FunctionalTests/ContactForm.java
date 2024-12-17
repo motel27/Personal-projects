@@ -1,4 +1,4 @@
-package KeborMed.PositiveTests;
+package KeborMed.FunctionalTests;
 
 
 import org.openqa.selenium.By;
@@ -15,16 +15,20 @@ public class ContactForm extends Base {
         WebElement nameField = driver.findElement(By.id("name"));
         WebElement emailField = driver.findElement(By.id("email"));
         WebElement messageField = driver.findElement(By.id("message"));
-      //WebElement submitButton = driver.findElement(By.id("submit"));
+      /*WebElement submitButton = driver.findElement(By.id("submit")); */
 
         nameField.sendKeys("Test User");
         emailField.sendKeys("test@example.com");
         messageField.sendKeys("This is a test message.");
-        //submitButton.click();
-
+        /*submitButton.click();*/
 
         // Test if request is send by checking confirmation text
        WebElement successMessage = driver.findElement(By.id("success"));
-       Assert.assertTrue(successMessage.isDisplayed(), "missing succsess confirmation message");
+       Assert.assertTrue(successMessage.isDisplayed(), "missing success confirmation message");
+
+        driver.navigate().refresh();
+        /*submitButton.click();*/
+        WebElement ErrorMessage = driver.findElement(By.id(""));
+        Assert.assertTrue(ErrorMessage.isDisplayed(), "missing error messages");
     }
 }
