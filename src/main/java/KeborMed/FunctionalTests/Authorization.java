@@ -8,17 +8,14 @@ import org.testng.annotations.Test;
 
 public class Authorization extends Base {
 
-    private Actions scrollUtils;
-
     @Test
-    public void verifyLogin() {
+    public void verifyValidLogin() {
 
         driver.get("https://kebormed.com/platform/index.html");
 
         Actions actions = new Actions(driver);
         actions.sendKeys(Keys.PAGE_DOWN).perform();
         driver.findElement(By.partialLinkText("SIGN")).click();
-
 
         // Get all window handles (tabs)
         Set<String> windowHandles = driver.getWindowHandles();
@@ -34,7 +31,6 @@ public class Authorization extends Base {
         // Perform actions on the second tab (for example, print the title)
         System.out.println("Current tab title: " + driver.getTitle());
 
-
             WebElement username = driver.findElement(By.id("username"));
             WebElement emailField = driver.findElement(By.id("password"));
             WebElement Sign = driver.findElement(By.id("kc-login"));
@@ -45,4 +41,9 @@ public class Authorization extends Base {
 
         }
 
+        @Test
+        public void verifyInvalidLogin() {
+
+
+        }
     }

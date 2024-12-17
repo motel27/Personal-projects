@@ -13,13 +13,12 @@ public class Base {
 
     @BeforeMethod
     public void setUp() {
-        // Инициализация драйвера (можно выбрать браузер через переменные)
+
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Mihail\\Desktop\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
         driver = new ChromeDriver(options);
 
-        // Установка таймаутов
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
