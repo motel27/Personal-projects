@@ -22,8 +22,7 @@ Message has been sent and "success" message id displayed
 ### Steps:
 1. Open the HP: 'https://kebormed.com/about/index.html'.
 2. Click the **"Send"** button: empty fields
+3. Check Error messages for all fields
 
 **Expected Results**:  
-Message has not been sent and "error" messages are displayed
-
-## Test Case 3: Form Submission using empty data
+Message has not been sent and "error" messages are displayed for all fields
