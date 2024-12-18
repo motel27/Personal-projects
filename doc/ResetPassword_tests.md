@@ -16,11 +16,11 @@ Verify that a user can successfully Reset the password using existing Email.
 4. Click on [Submit] button.
 
 **Expected Result**:  
-The messages of the page is `example`.
+The messages of the page is `You should receive an email shortly with further instructions`.
 
 ---
 
-## Test Case 1: Reset Password using unregistered Email
+## Test Case 2: Reset Password using unregistered Email
 
 **Description**:  
 Verify that a user can't Reset the password using unregistered Email.
@@ -32,4 +32,4 @@ Verify that a user can't Reset the password using unregistered Email.
 4. Click on [Submit] button.
 
 **Expected Results**:  
-The messages of the page is `example`.
+The messages of the page is `You should receive an email shortly with further instructions`.

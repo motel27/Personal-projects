@@ -1,11 +1,19 @@
 package KeborMed.FunctionalTests;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.time.Duration;
 
 public class Base {
@@ -14,7 +22,7 @@ public class Base {
     @BeforeMethod
     public void setUp() {
 
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Mihail\\Desktop\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
         driver = new ChromeDriver(options);
@@ -23,19 +31,27 @@ public class Base {
     }
 
     @AfterMethod
-    public void tearDown() {
+    public void tearDown(ITestResult result) {
+        if (!result.isSuccess()) {
+            takeScreenshot(result.getName());
+        }
         if (driver != null) {
             driver.quit();
         }
     }
-}
-  /*  public void screens() throws Exception{
 
-        File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        String path = "C:\\Users\\User\\Desktop\\Selenium.Log\\Automation\\Screens\\";
-        FileUtils.copyFile(src, new File(path + time() + driver.getPageSource().getClass() + " " +this.getClass().getSimpleName() + "png"));
+    private void takeScreenshot(String testName) {
+        if (driver instanceof TakesScreenshot) {
+            File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            Path destination = Path.of("src/main/Files", testName + ".png");
+            try {
+                Files.createDirectories(destination.getParent());
+                Files.copy(screenshot.toPath(), destination, StandardCopyOption.REPLACE_EXISTING);
+                System.out.println("Screenshot saved at: " + destination);
+            } catch (IOException e) {
+                System.err.println("Failed to save screenshot: " + e.getMessage());
+            }
+        }
     }
-    public String time() {
-        return new SimpleDateFormat("dd-MM-yyyy HH-mm-ss").format(new Date());}
-*/
+}
 
