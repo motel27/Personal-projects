@@ -3,7 +3,7 @@
 ## Test Case 1: Form Submission
 
 **Description**:
-Verify Contact Form Submission
+Verify Contact Form Submission.
 
 ### Steps:
 1. Open the HP: 'https://kebormed.com/about/index.html'.
@@ -22,7 +22,7 @@ Message has been sent and "success" message id displayed
 ### Steps:
 1. Open the HP: 'https://kebormed.com/about/index.html'.
 2. Click the **"Send"** button: empty fields
-3. Check Error messages for all fields
+3. Check Error messages for all fields to be displayed
 
 **Expected Results**:  
 Message has not been sent and "error" messages are displayed for all fields
