@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Functional Tests Suite">
+    <test name="All Functional Tests">
+        <classes>
+            <class name="KeborMed.FunctionalTests.HomePageTest"/>
+            <class name="KeborMed.FunctionalTests.ResponsiveTest"/>
+            <class name="KeborMed.FunctionalTests.AuthorizationTest"/>
+            <class name="KeborMed.FunctionalTests.ResetPasswordTest"/>
+            <class name="KeborMed.FunctionalTests.ContactForm.ContactFormPage"/>
+            <class name="KeborMed.LoadTests.PerformanceTest"/>
+        </classes>
+    </test>
+</suite>
